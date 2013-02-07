@@ -6838,7 +6838,7 @@ public class WindowManagerService extends IWindowManager.Stub
         sl = reduceConfigLayout(sl, Surface.ROTATION_270, density, unrotDh, unrotDw);
         outConfig.smallestScreenWidthDp = (int)(displayInfo.smallestNominalAppWidth / density);
 	// Set widthDp by default
-+	outConfig.smallestScreenWidthDp = 721;
+	outConfig.smallestScreenWidthDp = 721;
         outConfig.screenLayout = sl;
     }
 
