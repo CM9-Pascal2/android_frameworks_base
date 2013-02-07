@@ -1265,10 +1265,15 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             mHasSystemNavBar = false;
             mNavigationBarCanMove = false;
         }
+<<<<<<< HEAD
 	//Statusbar always on
 	mHasSystemNavBar = true;
 	mNavigationBarCanMove = false;
 
+=======
+		mHasSystemNavBar = true;
+		mNavigationBarCanMove = false;
+>>>>>>> cm-10.1r
         if (!mHasSystemNavBar) {
             mHasNavigationBar = mContext.getResources().getBoolean(
                     com.android.internal.R.bool.config_showNavigationBar);
