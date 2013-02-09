@@ -63,6 +63,8 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import android.os.storage.StorageManager;
+
 import com.android.internal.statusbar.StatusBarIcon;
 import com.android.internal.statusbar.StatusBarNotification;
 import com.android.systemui.R;
@@ -174,6 +176,8 @@ public class TabletStatusBar extends BaseStatusBar implements
 
     View mCompatibilityHelpDialog = null;
 
+    private StorageManager mStorageManager;
+
     // for disabling the status bar
     int mDisabled = 0;
 
@@ -267,6 +271,11 @@ public class TabletStatusBar extends BaseStatusBar implements
         mBatteryController.addIconView((ImageView)mNotificationPanel.findViewById(R.id.battery));
         mBatteryController.addLabelView(
                 (TextView)mNotificationPanel.findViewById(R.id.battery_text));
+
+	//Show storage
+	mStorageManager = (StorageManager) context.getSystemService(Context.STORAGE_SERVICE);
+        mStorageManager.registerListener(
+                new com.android.systemui.usb.StorageNotification(context));			
 
         // Bt
         mBluetoothController.addIconView(
