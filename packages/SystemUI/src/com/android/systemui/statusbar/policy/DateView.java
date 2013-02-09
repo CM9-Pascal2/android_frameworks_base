@@ -77,11 +77,11 @@ public class DateView extends TextView implements OnClickListener, OnLongClickLi
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         mAttachedToWindow = false;
-        if (mParent != null) {
+       /* if (mParent != null) {
             mParent.setOnClickListener(null);
             mParent.setOnLongClickListener(null);
             mParent = null;
-        }
+        }*/
         setUpdates();
     }
 
